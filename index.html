@@ -228,9 +228,14 @@
             color: #6c757d; /* Gray text */
             text-align: center;
         }
-        .footer a {
+        /* Updated Footer Navigation */
+        .footer-nav {
+            margin-bottom: 15px;
+        }
+        .footer-nav a {
             color: #495057; /* Slightly darker gray links */
             text-decoration: underline;
+            margin: 0 8px; /* Spacing between links */
         }
 
         /* Responsive adjustments for smaller screens */
@@ -247,6 +252,14 @@
             }
             .header .subtitle {
                 font-size: 1.1em;
+            }
+            /* Stack footer links vertically on small screens */
+            .footer-nav a {
+                display: block;
+                margin: 5px 0;
+            }
+            .footer-nav span { /* Hide separators on small screens */
+                 display: none;
             }
         }
 
@@ -265,8 +278,10 @@
 
         <!-- === Section 1: Header === -->
         <div class="header">
-            <h1>Speak Confidently. With an Authentic British Accent.</h1>
-            <p class="subtitle">Our senior British tutors (10+ years residency) provide daily 1-on-1 guidance to help you speak clearly, fluently, and confidently.</p>
+            <!-- ▼▼▼ Corrected <br> tag ▼▼▼ -->
+            <h1>Speak Confidently. <br>With an Authentic British Accent.</h1>
+            <!-- ▼▼▼ Text "(10+ years residency)" removed ▼▼▼ -->
+            <p class="subtitle">Our senior British tutors provide daily 1-on-1 guidance to help you speak clearly, fluently, and confidently.</p>
         </div>
 
         <!-- === Section 4: Pricing Options === (Moved Up) -->
@@ -280,7 +295,7 @@
                     <div class="price-note">One-time payment</div>
                     <p class="description">Experience 7 full days of daily missions and tutor feedback. A risk-free way to see if our service is right for you.</p>
                     <!-- ▼▼▼ Link updated based on your previous input ▼▼▼ -->
-                    <a href="https://buy.stripe.com/3cI28tfDj9K9dDP7sabEA01" class="button trial">Start Trial</a>
+                    <a href="https://buy.stripe.com/8x2fZi03sdgPdcH448es000" class="button trial">Start Trial</a>
                 </div>
 
                 <!-- Option B: Monthly -->
@@ -290,7 +305,7 @@
                     <div class="price-note">Auto-renews monthly</div>
                     <p class="description">Get full access. Your dedicated British tutor will build a long-term learning plan to progressively improve your skills.</p>
                     <!-- ▼▼▼ Remember to paste your ACTUAL Monthly Plan link here later ▼▼▼ -->
-                    <a href="https://buy.stripe.com/6oU4gB76NbSh7fr5k2bEA00" class="button">Subscribe Now</a>
+                    <a href="[Paste your English 'Monthly Plan' Stripe Link Here]" class="button">Subscribe Now</a>
                 </div>
             </div>
         </div>
@@ -338,8 +353,16 @@
         </div>
 
         <!-- === Section 6: Footer === -->
+        <!-- ▼▼▼ Footer Navigation Updated ▼▼▼ -->
         <div class="footer">
-            <p>By subscribing or starting a trial, you agree to our <a href="terms.html">Terms of Service</a> and <a href="privacy.html">Privacy Policy</a>.</p>
+             <div class="footer-nav">
+                <a href="index.html">Home</a> <span>|</span>
+                <a href="about.html">About Us</a> <span>|</span>
+                <a href="contact.html">Contact Us</a> <span>|</span>
+                <a href="terms.html">Terms of Service</a> <span>|</span>
+                <a href="privacy.html">Privacy Policy</a> <span>|</span>
+                <a href="refund-policy.html">Refund Policy</a>
+            </div>
             <p>&copy; 2025 E-Lam Limited. All rights reserved.</p>
         </div>
 
