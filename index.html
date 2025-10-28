@@ -99,20 +99,22 @@
             color: #495057;
         }
 
-        /* --- Learning Journey --- */
+        /* --- Learning Journey (Flexbox for 2 columns) --- */
         .journey-phases {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 25px; /* Increased gap */
+            display: flex; /* Makes items arrange horizontally */
+            flex-wrap: wrap; /* Allows items to wrap on small screens */
+            justify-content: center; /* Centers the items */
+            gap: 25px; /* Space between items */
             text-align: left;
         }
         .phase-box {
-            flex-basis: calc(50% - 40px); /* More flexible width */
+            flex-basis: calc(50% - 40px); /* Tries to fit 2 items per row */
+            min-width: 250px; /* Minimum width before wrapping */
             background-color: #f8f9fa; /* Use light gray background */
             padding: 25px; /* Increased padding */
             border-radius: 8px;
             border: 1px solid #e9ecef; /* Added border */
+            box-sizing: border-box; /* Include padding and border in width calculation */
         }
         .phase-box h3 {
             margin-top: 0;
@@ -127,23 +129,25 @@
             font-size: 0.95em;
         }
 
-        /* --- Pricing Options --- */
+        /* --- Pricing Options (Flexbox for 2 columns) --- */
         .pricing-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 25px; /* Increased gap */
+            display: flex; /* Makes items arrange horizontally */
+            flex-wrap: wrap; /* Allows items to wrap on small screens */
+            justify-content: center; /* Centers the items */
+            gap: 25px; /* Space between items */
         }
         .product-box {
             background-color: #ffffff;
             border: 1px solid #ddd;
             border-radius: 8px;
             padding: 30px;
-            width: calc(50% - 45px); /* Two boxes per row */
+            flex-basis: calc(50% - 45px); /* Tries to fit 2 items per row */
+            min-width: 250px; /* Minimum width before wrapping */
             box-shadow: 0 4px 12px rgba(0,0,0,0.05);
             text-align: center;
             display: flex;
             flex-direction: column;
+            box-sizing: border-box; /* Include padding and border in width calculation */
         }
         .product-box h2 {
             font-size: 1.6em; /* Adjusted size */
@@ -228,6 +232,24 @@
             color: #495057; /* Slightly darker gray links */
             text-decoration: underline;
         }
+
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 650px) {
+            .phase-box, .product-box {
+                flex-basis: 100%; /* On small screens, make them full width */
+                width: 100%;
+            }
+            .journey-phases, .pricing-grid {
+                gap: 15px; /* Reduce gap on small screens */
+            }
+            .header h1 {
+                font-size: 2.2em;
+            }
+            .header .subtitle {
+                font-size: 1.1em;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -257,6 +279,7 @@
                     <div class="price">HKD $550</div>
                     <div class="price-note">One-time payment</div>
                     <p class="description">Experience 7 full days of daily missions and tutor feedback. A risk-free way to see if our service is right for you.</p>
+                    <!-- ▼▼▼ Link updated based on your previous input ▼▼▼ -->
                     <a href="https://buy.stripe.com/8x2fZi03sdgPdcH448es000" class="button trial">Start Trial</a>
                 </div>
 
@@ -266,6 +289,7 @@
                     <div class="price">HKD $1,980</div>
                     <div class="price-note">Auto-renews monthly</div>
                     <p class="description">Get full access. Your dedicated British tutor will build a long-term learning plan to progressively improve your skills.</p>
+                    <!-- ▼▼▼ Remember to paste your ACTUAL Monthly Plan link here later ▼▼▼ -->
                     <a href="[Paste your English 'Monthly Plan' Stripe Link Here]" class="button">Subscribe Now</a>
                 </div>
             </div>
@@ -322,3 +346,4 @@
     </div>
 </body>
 </html>
+
