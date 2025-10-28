@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TalkingBob - Daily English Coaching</title>
+    <style>
+        /* --- Overall Style --- */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.7; /* Increased line spacing */
+            background-color: #f8f9fa; /* Light gray background */
+            color: #343a40; /* Dark gray text */
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto; /* Changed to 0 auto */
+            padding: 30px 20px; /* Increased top/bottom padding */
+        }
+        h1, h2, h3, h4, h5, h6 {
+            color: #212529; /* Darker heading color */
+        }
+        a {
+            color: #0056b3; /* Unified link color */
+            text-decoration: none; /* Remove underline by default */
+        }
+        a:hover {
+            text-decoration: underline; /* Add underline on hover */
+        }
+
+        /* --- Language Switcher --- */
+        .lang-switcher {
+            text-align: center;
+            padding: 12px; /* Increased padding */
+            background-color: #e9ecef; /* Slightly darker background */
+            font-size: 0.9em;
+            border-bottom: 1px solid #dee2e6; /* Add bottom border */
+        }
+        .lang-switcher a {
+            margin: 0 12px; /* Increased spacing */
+            text-decoration: none;
+            color: #495057; /* Gray links */
+        }
+        .lang-switcher a.active { /* Bold current language */
+             font-weight: bold;
+             color: #0056b3;
+        }
+
+        /* --- Header --- */
+        .header {
+            text-align: center;
+            margin-bottom: 60px; /* Increased bottom margin */
+            padding-top: 20px; /* Added top padding */
+        }
+        .header h1 {
+            font-size: 2.6em; /* Slightly adjusted size */
+            margin-bottom: 15px; /* Increased margin below h1 */
+        }
+        .header .subtitle {
+            font-size: 1.2em; /* Slightly adjusted size */
+            color: #6c757d; /* Lighter gray */
+            max-width: 600px; /* Limit width for readability */
+            margin: 0 auto; /* Center */
+        }
+
+        /* --- Main Content Sections --- */
+        .content-section {
+            margin-bottom: 60px; /* Unified section spacing */
+            padding: 30px; /* Added inner padding to sections */
+            background-color: #ffffff; /* White background for sections */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* Subtle shadow */
+        }
+        .content-section h2 {
+            font-size: 1.8em; /* Adjusted heading size */
+            color: #343a40;
+            margin-top: 0; /* Removed top margin */
+            margin-bottom: 30px; /* Increased margin below h2 */
+            text-align: center;
+            border-bottom: 1px solid #eee; /* Add separator below heading */
+            padding-bottom: 15px;
+        }
+
+        /* --- How It Works --- */
+        .how-it-works-steps {
+            text-align: left;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .how-it-works-steps h3 {
+            color: #0056b3; /* Use link color */
+            font-size: 1.15em; /* Adjusted size */
+            margin-bottom: 8px; /* Increased margin below h3 */
+        }
+        .how-it-works-steps p {
+            margin-bottom: 20px; /* Increased paragraph spacing */
+            color: #495057;
+        }
+
+        /* --- Learning Journey --- */
+        .journey-phases {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px; /* Increased gap */
+            text-align: left;
+        }
+        .phase-box {
+            flex-basis: calc(50% - 40px); /* More flexible width */
+            background-color: #f8f9fa; /* Use light gray background */
+            padding: 25px; /* Increased padding */
+            border-radius: 8px;
+            border: 1px solid #e9ecef; /* Added border */
+        }
+        .phase-box h3 {
+            margin-top: 0;
+            font-size: 1.2em;
+            color: #343a40;
+            border-bottom: 2px solid #0056b3;
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+        }
+        .phase-box p {
+            color: #495057;
+            font-size: 0.95em;
+        }
+
+        /* --- Pricing Options --- */
+        .pricing-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px; /* Increased gap */
+        }
+        .product-box {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 30px;
+            width: calc(50% - 45px); /* Two boxes per row */
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+        }
+        .product-box h2 {
+            font-size: 1.6em; /* Adjusted size */
+            color: #343a40;
+            margin-top: 0;
+            margin-bottom: 15px; /* Adjusted spacing */
+            padding-bottom: 10px; /* Adjusted padding */
+            border-bottom: none; /* Removed heading underline */
+        }
+        .product-box .price {
+            font-size: 1.8em; /* Increased price font size */
+            font-weight: 600; /* Bolder */
+            color: #0056b3;
+            margin-bottom: 5px; /* Adjusted spacing */
+        }
+        .product-box .price-note {
+            font-size: 0.9em;
+            color: #6c757d;
+            margin-bottom: 25px; /* Increased spacing */
+        }
+        .product-box .description {
+            font-size: 0.95em; /* Slightly adjusted */
+            margin-bottom: 30px; /* Increased spacing */
+            flex-grow: 1;
+            color: #495057;
+        }
+        .button {
+            display: block;
+            background-color: #0056b3; /* Slightly darker blue */
+            color: #ffffff;
+            padding: 12px 20px; /* Adjusted padding */
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 500; /* Medium weight */
+            font-size: 1em; /* Adjusted size */
+            text-align: center;
+            transition: background-color 0.2s ease, box-shadow 0.2s ease; /* Added shadow transition */
+            border: none;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #004494; /* Darker hover color */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Add hover shadow */
+            text-decoration: none; /* Ensure no underline on hover */
+        }
+        .button.trial {
+            background-color: #218838; /* Slightly darker green */
+        }
+        .button.trial:hover {
+            background-color: #1e7e34;
+        }
+
+        /* --- Upsell Section --- */
+        .upsell {
+            background-color: #e9ecef; /* Light gray background */
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid #dee2e6; /* Added border */
+        }
+        .upsell p {
+            font-size: 1.05em; /* Adjusted size */
+            margin-bottom: 20px;
+            color: #495057;
+        }
+        .upsell a {
+            color: #0056b3;
+            text-decoration: underline;
+            display: inline-block; /* Changed to inline-block */
+            margin: 0 10px 10px 10px; /* Adjusted spacing */
+        }
+
+        /* --- Footer --- */
+        .footer {
+            margin-top: 60px; /* Increased spacing */
+            padding-bottom: 30px; /* Added bottom padding */
+            font-size: 0.85em; /* Adjusted size */
+            color: #6c757d; /* Gray text */
+            text-align: center;
+        }
+        .footer a {
+            color: #495057; /* Slightly darker gray links */
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ▼▼▼ Language Switcher ▼▼▼ -->
+    <div class="lang-switcher">
+        <a href="index.html" class="active">English</a> | <!-- Set English as active -->
+        <a href="index-tc.html">繁體中文</a> |
+        <a href="index-sc.html">简体中文</a>
+    </div>
+
+    <div class="container">
+
+        <!-- === Section 1: Header === -->
+        <div class="header">
+            <h1>Speak Confidently. With an Authentic British Accent.</h1>
+            <p class="subtitle">Our senior British tutors (10+ years residency) provide daily 1-on-1 guidance to help you speak clearly, fluently, and confidently.</p>
+        </div>
+
+        <!-- === Section 4: Pricing Options === (Moved Up) -->
+        <div class="content-section pricing">
+            <h2>Choose Your Starting Point</h2>
+            <div class="pricing-grid">
+                <!-- Option A: Trial -->
+                <div class="product-box">
+                    <h2>1-Week Trial</h2>
+                    <div class="price">HKD $550</div>
+                    <div class="price-note">One-time payment</div>
+                    <p class="description">Experience 7 full days of daily missions and tutor feedback. A risk-free way to see if our service is right for you.</p>
+                    <a href="[Paste your English '1 Week Trial' Stripe Link Here]" class="button trial">Start Trial</a>
+                </div>
+
+                <!-- Option B: Monthly -->
+                <div class="product-box">
+                    <h2>Monthly Plan</h2>
+                    <div class="price">HKD $1,980</div>
+                    <div class="price-note">Auto-renews monthly</div>
+                    <p class="description">Get full access. Your dedicated British tutor will build a long-term learning plan to progressively improve your skills.</p>
+                    <a href="[Paste your English 'Monthly Plan' Stripe Link Here]" class="button">Subscribe Now</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- === Section 2: How It Works === -->
+        <div class="content-section how-it-works">
+            <h2>How Our Service Works</h2>
+            <div class="how-it-works-steps">
+                <h3>1. Receive Your Daily Mission</h3>
+                <p>Every morning, your British tutor sends a custom "micro-mission" via WhatsApp or WeChat, tailored to your learning goals.</p>
+
+                <h3>2. Reply On Your Time</h3>
+                <p>Complete the task anytime within 24 hours – record a voice note, write a reply, whatever fits your schedule.</p>
+
+                <h3>3. Get Your Personalized Feedback</h3>
+                <p>This is the core value. Your tutor analyzes your submission, helps improve pronunciation, and guides you towards more natural expression. You're guaranteed to receive this feedback within 24 hours.</p>
+
+                <h3>4. Weekly Sync-up</h3>
+                <p>Each weekend, you'll have a 10-minute live text chat with your tutor to review progress and set goals.</p>
+            </div>
+        </div>
+
+        <!-- === Section 3: Your Learning Journey === -->
+        <div class="content-section journey">
+            <h2>Your Learning Journey</h2>
+            <p style="text-align: center; max-width: 600px; margin: -15px auto 30px auto;">Our service is a professional learning journey. Your tutor assesses your level and starts by building a solid foundation:</p>
+            <div class="journey-phases">
+                <div class="phase-box">
+                    <h3>Phase 1: Build Clarity (The Foundation)</h3>
+                    <p>Focus on correcting grammar, basic pronunciation, and sentence structure. The primary goal is natural, accurate speech that's easily understood.</p>
+                </div>
+                <div class="phase-box">
+                    <h3>Phase 2: Aim for British Fluency (Optional Path)</h3>
+                    <p>Once your tutor confirms your foundation is solid, you can opt into this advanced path. They'll teach authentic British slang, idioms, and provide Accent-Level Audio Feedback to refine your accent.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- === Section 5: Additional Custom Services === -->
+        <div class="upsell">
+            <p>Need specific preparation beyond daily English? We offer customized training for interviews, business presentations, storytelling, etc. These services are quoted separately.</p>
+            <a href="[Your WhatsApp Link]">Contact Us via WhatsApp</a>
+            <a href="[Your WeChat QR Code Link]">Contact Us via WeChat</a>
+            <a href="mailto:contact.elamltd@gmail.com">Email: contact.elamltd@gmail.com</a>
+        </div>
+
+        <!-- === Section 6: Footer === -->
+        <div class="footer">
+            <p>By subscribing or starting a trial, you agree to our <a href="terms.html">Terms of Service</a> and <a href="privacy.html">Privacy Policy</a>.</p>
+            <p>&copy; 2025 E-Lam Limited. All rights reserved.</p>
+        </div>
+
+    </div>
+</body>
+</html>
