@@ -1,233 +1,28 @@
 <!DOCTYPE html>
-<html lang="zh-Hans"> <!-- 语言设为简体中文 -->
+<html lang="zh-Hans">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TalkingBob - 每日英式英语指导</title>
+    <title>Talk English with Leo - 每日英式英语指导</title> <!-- 更新标题 -->
     <style>
-        /* --- 整体风格 --- */
-        body { 
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif; /* 使用简体中文字体 */
-            line-height: 1.7; /* 增加行距 */
-            background-color: #f8f9fa; /* 淡灰色背景 */
-            color: #343a40; /* 深灰色文字 */
-            margin: 0;
-            padding: 0;
-        }
-        .container { 
-            max-width: 800px; 
-            margin: 0 auto; /* 改为0 auto */
-            padding: 30px 20px; /* 增加上下padding */
-        }
-        h1, h2, h3, h4, h5, h6 {
-            color: #212529; /* 更深的标题颜色 */
-        }
-        a {
-            color: #0056b3; /* 统一链接颜色 */
-            text-decoration: none; /* 预设移除底线 */
-        }
-        a:hover {
-            text-decoration: underline; /* 鼠标悬停时加底线 */
-        }
-
-        /* --- 语言切换 --- */
-        .lang-switcher {
-            text-align: center; 
-            padding: 12px; /* 增加padding */
-            background-color: #e9ecef; /* 稍深的背景 */
-            font-size: 0.9em;
-            border-bottom: 1px solid #dee2e6; /* 加入底线分隔 */
-        }
-        .lang-switcher a {
-            margin: 0 12px; /* 增加间距 */
-            text-decoration: none;
-            color: #495057; /* 灰色链接 */
-        }
-        .lang-switcher a.active { /* 目前语言加粗 */
-             font-weight: bold;
-             color: #0056b3;
-        }
-
-        /* --- 页首 --- */
-        .header {
-            text-align: center;
-            margin-bottom: 60px; /* 增加底部间距 */
-            padding-top: 20px; /* 增加顶部padding */
-        }
-        .header h1 { 
-            font-size: 2.6em; /* 略微调整大小 */
-            margin-bottom: 15px; /* 增加标题下方间距 */
-        }
-        .header .subtitle {
-            font-size: 1.2em; /* 略微调整大小 */
-            color: #6c757d; /* 稍浅的灰色 */
-            max-width: 600px; /* 限制宽度使其更易读 */
-            margin: 0 auto; /* 置中 */
-        }
-
-        /* --- 主要内容区块 --- */
-        .content-section {
-            margin-bottom: 60px; /* 统一区块间距 */
-            padding: 30px; /* 为区块增加内边距 */
-            background-color: #ffffff; /* 区块使用白色背景 */
-            border-radius: 8px; /* 圆角 */
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* 细微阴影 */
-        }
-        .content-section h2 {
-            font-size: 1.8em; /* 调整标题大小 */
-            color: #343a40;
-            margin-top: 0; /* 移除顶部margin */
-            margin-bottom: 30px; /* 增加标题下方间距 */
-            text-align: center;
-            border-bottom: 1px solid #eee; /* 标题下方加分隔线 */
-            padding-bottom: 15px;
-        }
-
-        /* --- 如何运作 --- */
-        .how-it-works-steps {
-            text-align: left;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        .how-it-works-steps h3 {
-            color: #0056b3; /* 使用链接颜色 */
-            font-size: 1.15em; /* 调整大小 */
-            margin-bottom: 8px; /* 增加标题下方间距 */
-        }
-        .how-it-works-steps p {
-            margin-bottom: 20px; /* 增加段落间距 */
-            color: #495057;
-        }
-
-        /* --- 学习旅程 --- */
-        .journey-phases {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 25px; /* 增加间距 */
-            text-align: left;
-        }
-        .phase-box {
-            flex-basis: calc(50% - 40px); /* 让宽度更灵活 */
-            background-color: #f8f9fa; /* 使用淡灰色背景 */
-            padding: 25px; /* 增加padding */
-            border-radius: 8px;
-            border: 1px solid #e9ecef; /* 加入边框 */
-        }
-        .phase-box h3 {
-            margin-top: 0;
-            font-size: 1.2em;
-            color: #343a40;
-            border-bottom: 2px solid #0056b3;
-            padding-bottom: 8px;
-            margin-bottom: 15px;
-        }
-        .phase-box p {
-            color: #495057;
-            font-size: 0.95em;
-        }
-
-        /* --- 收费选项 --- */
-        .pricing-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 25px; /* 增加间距 */
-        }
-        .product-box {
-            background-color: #ffffff;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 30px;
-            width: calc(50% - 45px); /* 使其一行显示两个 */
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-        }
-        .product-box h2 {
-            font-size: 1.6em; /* 调整大小 */
-            color: #343a40;
-            margin-top: 0;
-            margin-bottom: 15px; /* 调整间距 */
-            padding-bottom: 10px; /* 调整padding */
-            border-bottom: none; /* 移除标题底线 */
-        }
-        .product-box .price {
-            font-size: 1.8em; /* 增大价格字体 */
-            font-weight: 600; /* 加粗 */
-            color: #0056b3;
-            margin-bottom: 5px; /* 调整间距 */
-        }
-        .product-box .price-note {
-            font-size: 0.9em;
-            color: #6c757d;
-            margin-bottom: 25px; /* 增加间距 */
-        }
-        .product-box .description {
-            font-size: 0.95em; /* 略微调整 */
-            margin-bottom: 30px; /* 增加间距 */
-            flex-grow: 1; 
-            color: #495057;
-        }
-        .button {
-            display: block;
-            background-color: #0056b3; /* 使用稍深的蓝色 */
-            color: #ffffff;
-            padding: 12px 20px; /* 调整padding */
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: 500; /* 使用中等粗细 */
-            font-size: 1em; /* 调整大小 */
-            text-align: center;
-            transition: background-color 0.2s ease, box-shadow 0.2s ease; /* 加入阴影过渡 */
-            border: none;
-            cursor: pointer;
-        }
-        .button:hover {
-            background-color: #004494; /* 加深hover颜色 */
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* 加入悬停阴影 */
-            text-decoration: none; /* 确保hover时无底线 */
-        }
-        .button.trial {
-            background-color: #218838; /* 使用稍深的绿色 */
-        }
-        .button.trial:hover {
-            background-color: #1e7e34;
-        }
-
-        /* --- 额外服务 --- */
-        .upsell {
-            background-color: #e9ecef; /* 淡灰色背景 */
-            padding: 30px;
-            border-radius: 8px;
-            text-align: center;
-            border: 1px solid #dee2e6; /* 加入边框 */
-        }
-        .upsell p {
-            font-size: 1.05em; /* 调整大小 */
-            margin-bottom: 20px;
-            color: #495057;
-        }
-        .upsell a {
-            color: #0056b3;
-            text-decoration: underline;
-            display: inline-block; /* 改为行内区块 */
-            margin: 0 10px 10px 10px; /* 调整间距 */
-        }
-
-        /* --- 页脚 --- */
-        .footer {
-            margin-top: 60px; /* 增加间距 */
-            padding-bottom: 30px; /* 增加底部padding */
-            font-size: 0.85em; /* 调整大小 */
-            color: #6c757d; /* 灰色文字 */
-            text-align: center;
-        }
-        .footer a {
-            color: #495057; /* 稍深的灰色链接 */
-            text-decoration: underline;
-        }
+        /* Styles omitted for brevity - same as index.html */
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.7; background-color: #f8f9fa; color: #343a40; margin: 0; padding: 0; }
+        .container { max-width: 800px; margin: 0 auto; padding: 30px 20px; }
+        h1, h2, h3 { color: #212529; } a { color: #0056b3; text-decoration: none; } a:hover { text-decoration: underline; }
+        .lang-switcher { text-align: center; padding: 12px; background-color: #e9ecef; font-size: 0.9em; border-bottom: 1px solid #dee2e6; }
+        .lang-switcher a { margin: 0 12px; text-decoration: none; color: #495057; } .lang-switcher a.active { font-weight: bold; color: #0056b3; }
+        .header { text-align: center; margin-bottom: 60px; padding-top: 20px; } .header h1 { font-size: 2.6em; margin-bottom: 15px; } .header .subtitle { font-size: 1.2em; color: #6c757d; max-width: 600px; margin: 0 auto; }
+        .content-section { margin-bottom: 60px; padding: 30px; background-color: #ffffff; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .content-section h2 { font-size: 1.8em; color: #343a40; margin-top: 0; margin-bottom: 30px; text-align: center; border-bottom: 1px solid #eee; padding-bottom: 15px; }
+        .how-it-works-steps { text-align: left; max-width: 600px; margin: 0 auto; } .how-it-works-steps h3 { color: #0056b3; font-size: 1.15em; margin-bottom: 8px; } .how-it-works-steps p { margin-bottom: 20px; color: #495057; }
+        .journey-phases { display: flex; flex-wrap: wrap; justify-content: center; gap: 25px; text-align: left; }
+        .phase-box { flex-basis: calc(50% - 40px); min-width: 250px; background-color: #f8f9fa; padding: 25px; border-radius: 8px; border: 1px solid #e9ecef; box-sizing: border-box; } .phase-box h3 { margin-top: 0; font-size: 1.2em; color: #343a40; border-bottom: 2px solid #0056b3; padding-bottom: 8px; margin-bottom: 15px; } .phase-box p { color: #495057; font-size: 0.95em; }
+        .pricing-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 25px; }
+        .product-box { background-color: #ffffff; border: 1px solid #ddd; border-radius: 8px; padding: 30px; flex-basis: calc(50% - 45px); min-width: 250px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); text-align: center; display: flex; flex-direction: column; box-sizing: border-box; } .product-box h2 { font-size: 1.6em; color: #343a40; margin-top: 0; margin-bottom: 15px; padding-bottom: 10px; border-bottom: none; } .product-box .price { font-size: 1.8em; font-weight: 600; color: #0056b3; margin-bottom: 5px; } .product-box .price-note { font-size: 0.9em; color: #6c757d; margin-bottom: 25px; } .product-box .description { font-size: 0.95em; margin-bottom: 30px; flex-grow: 1; color: #495057; }
+        .button { display: block; background-color: #0056b3; color: #ffffff; padding: 12px 20px; text-decoration: none; border-radius: 5px; font-weight: 500; font-size: 1em; text-align: center; transition: background-color 0.2s ease, box-shadow 0.2s ease; border: none; cursor: pointer; } .button:hover { background-color: #004494; box-shadow: 0 4px 8px rgba(0,0,0,0.1); text-decoration: none; } .button.trial { background-color: #218838; } .button.trial:hover { background-color: #1e7e34; }
+        .upsell { background-color: #e9ecef; padding: 30px; border-radius: 8px; text-align: center; border: 1px solid #dee2e6; } .upsell p { font-size: 1.05em; margin-bottom: 20px; color: #495057; } .upsell a { color: #0056b3; text-decoration: underline; display: inline-block; margin: 0 10px 10px 10px; }
+        .footer { margin-top: 60px; padding-bottom: 30px; font-size: 0.85em; color: #6c757d; text-align: center; } .footer-nav { margin-bottom: 15px; } .footer-nav a { color: #495057; text-decoration: underline; margin: 0 8px; }
+        @media (max-width: 650px) { .phase-box, .product-box { flex-basis: 100%; width: 100%; } .journey-phases, .pricing-grid { gap: 15px; } .header h1 { font-size: 2.2em; } .header .subtitle { font-size: 1.1em; } .footer-nav a { display: block; margin: 5px 0; } .footer-nav span { display: none; } }
     </style>
 </head>
 <body>
@@ -240,24 +35,24 @@
     </div>
 
     <div class="container">
-        
+
         <!-- === 第 1 部分：页首 === -->
         <div class="header">
-            <h1>掌握地道英式英语，自信开口每一天</h1> 
-            <p class="subtitle">资深导师（居英 10+ 年）提供每日一对一指导，助你讲得清晰、流利、有自信。</p> 
+            <h1>掌握地道英式英语。<br>自信开口每一天。</h1>
+            <p class="subtitle">我们的资深英国导师提供每日一对一指导，助您讲得清晰、流利、有自信。</p>
         </div>
 
         <!-- === 第 4 部分：收费选项 === -->
         <div class="content-section pricing">
-            <h2>选择适合您的计划</h2> 
+            <h2>选择适合您的计划</h2>
             <div class="pricing-grid">
                 <!-- 选项 A: 试用 -->
                 <div class="product-box">
-                    <h2>一周试用计划</h2> 
+                    <h2>一周试用计划</h2>
                     <div class="price">HKD $550</div>
                     <div class="price-note">一次性付款</div>
-                    <p class="description">体验 7 日完整的每日任务和导师批改。无风险试用，了解服务是否适合您。</p> 
-                    <a href="[在此贴上您的 '1 周试用' 简体版 Stripe 链接]" class="button trial">开始试用</a> 
+                    <p class="description">体验 7 日完整的每日任务和导师批改。无风险试用，了解服务是否适合您。</p>
+                    <a href="[在此贴上您的 '1 周试用' 简体版 Stripe 链接]" class="button trial">开始试用</a>
                 </div>
 
                 <!-- 选项 B: 月费 -->
@@ -265,60 +60,68 @@
                     <h2>完整月费计划</h2>
                     <div class="price">HKD $1,980</div>
                     <div class="price-note">每月自动续订</div>
-                    <p class="description">获取完整服务。您的专属英国导师将为您建立长期的学习蓝图，逐步提升英语能力。</p> 
-                    <a href="[在此贴上您的 '完整月费计划' 简体版 Stripe 链接]" class="button">立即订阅</a> 
+                    <p class="description">获取完整服务。您的专属英国导师将为您建立长期的学习蓝图，逐步提升英语能力。</p>
+                    <a href="[在此贴上您的 '完整月费计划' 简体版 Stripe 链接]" class="button">立即订阅</a>
                 </div>
             </div>
         </div>
 
         <!-- === 第 2 部分：“每日批改”如何运作 === -->
         <div class="content-section how-it-works">
-            <h2>服务运作方式</h2> 
+            <h2>服务运作方式</h2>
             <div class="how-it-works-steps">
-                <h3>1. 接收每日任务</h3> 
+                <h3>1. 接收每日任务</h3>
                 <p>每天早上，您的英国导师会根据您的学习目标，在 WhatsApp 或 WeChat 发送一个专属的“微任务”。</p>
-                
-                <h3>2. 随时完成任务</h3> 
-                <p>您只需在 24 小时内的任何空档时间完成，例如录制一段语音或写下回复。</p>
-                
-                <h3>3. 获得专属批改</h3> 
-                <p>导师会详细分析您的回复，帮助您改善发音，并指导您如何更自然地表达。您保证在 24 小时内收到这份专属批改。</p> 
 
-                <h3>4. 每周同步总结</h3> 
+                <h3>2. 随时完成任务</h3>
+                <p>您只需在 24 小时内的任何空档时间完成，例如录制一段语音或写下回复。</p>
+
+                <h3>3. 获得专属批改</h3>
+                <p>导师会详细分析您的回复，帮助您改善发音，并指导您如何更自然地表达。您保证在 24 小时内收到这份专属批改。</p>
+
+                <h3>4. 每周同步总结</h3>
                 <p>每周末，您和导师会有一个 10 分钟的即时文字聊天，总结本周学习进度。</p>
             </div>
         </div>
 
         <!-- === 第 3 部分：学习旅程 === -->
         <div class="content-section journey">
-            <h2>您的学习旅程</h2> 
+            <h2>您的学习旅程</h2>
             <p style="text-align: center; max-width: 600px; margin: -15px auto 30px auto;">我们的服务是一个专业的学习旅程。导师会先评估您的水平，并从建立稳固的基础开始：</p>
             <div class="journey-phases">
                 <div class="phase-box">
-                    <h3>阶段一：建立清晰表达能力</h3> 
-                    <p>专注于修正语法、基础发音和句子结构。首要目标是让您讲得自然、准确，令听者容易明白。</p> 
+                    <h3>阶段一：建立清晰表达能力</h3>
+                    <p>专注于修正语法、基础发音和句子结构。首要目标是让您讲得自然、准确，令听者容易明白。</p>
                 </div>
                 <div class="phase-box">
-                    <h3>阶段二：追求地道流利度（可选）</h3> 
-                    <p>当导师确认您的基础稳固后，您可选择进入此进阶路径。导师将教授英式俚语、地道片语，并提供语音批改以微调您的英式口音。</p> 
+                    <h3>阶段二：追求地道流利度（可选）</h3>
+                    <p>当导师确认您的基础稳固后，您可选择进入此进阶路径。导师将教授英式俚语、地道片语，并提供语音批改以微调您的英式口音。</p>
                 </div>
             </div>
         </div>
 
         <!-- === 第 5 部分：额外定制化服务 === -->
         <div class="upsell">
-            <p>除日常英语指导外，我们亦提供针对特定需求的定制化培训（例如面试、商业简报、演讲技巧等）。此类服务需另外报价。</p> 
-            <a href="[您的 WhatsApp 链接]">通过 WhatsApp 联系我们</a> 
-            <a href="[您的 WeChat 二维码链接]">通过 WeChat 联系我们</a> 
-            <a href="mailto:contact.elamltd@gmail.com">电邮至 contact.elamltd@gmail.com</a> 
+            <p>除日常英语指导外，我们亦提供针对特定需求的定制化培训（例如面试、商业简报、演讲技巧等）。此类服务需另外报价。</p>
+            <a href="[您的 WhatsApp 链接]">通过 WhatsApp 联系我们</a>
+            <a href="[您的 WeChat 二维码链接]">通过 WeChat 联系我们</a>
+            <a href="mailto:contact.elamltd@gmail.com">电邮至 contact.elamltd@gmail.com</a>
         </div>
-        
+
         <!-- === 第 6 部分：页脚 === -->
         <div class="footer">
-            <p>点击订阅或开始试用，即表示您同意我们的<a href="terms-sc.html">服务条款</a>及<a href="privacy-sc.html">隐私政策</a>。</p> <!-- 指向简体版条款 -->
-            <p>&copy; 2025 E-Lam Limited. 版权所有。</p> 
+             <div class="footer-nav"> <!-- ▼▼▼ 更新链接指向简体页面 ▼▼▼ -->
+                <a href="index-sc.html">首页</a> <span>|</span>
+                <a href="about-sc.html">关于我们</a> <span>|</span>
+                <a href="contact-sc.html">联系我们</a> <span>|</span>
+                <a href="terms-sc.html">服务条款</a> <span>|</span>
+                <a href="privacy-sc.html">隐私政策</a> <span>|</span>
+                <a href="refund-policy-sc.html">退款政策</a>
+            </div>
+            <p>&copy; 2025 E-Lam Limited. 版权所有。</p>
         </div>
 
     </div>
 </body>
 </html>
+
