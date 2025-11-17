@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Talk English with Leo</title>
     
-    <script async src="https://js.stripe.com/v3/buy-button.js"></script>
-    
     <style>
         /* --- Overall Style --- */
         body {
@@ -177,8 +175,6 @@
             flex-grow: 1;
             color: #495057;
         }
-        /* NOTE: .button styles are kept but not strictly needed for the Stripe element, 
-           as Stripe styles its own button. They are kept for general consistency. */
         .button {
             display: block;
             background-color: #0056b3; /* Slightly darker blue */
@@ -293,11 +289,7 @@
                     <div class="price-note">One-time payment</div>
                     <p class="description">Experience 7 full days of daily missions and tutor feedback. A risk-free way to see if our service is right for you.</p>
                     
-                    <stripe-buy-button
-                        buy-button-id="buy_btn_1SN8diRVpngd0GtTyyPgjebs"
-                        publishable-key="pk_test_51SN8AfRVpngd0GtTRHiK0u2CY1cM3YwMZrxlMQ7Fcdqr5Zho0kdSBQkSbRKX1VoHICwOPVB1EtP65FJXcaY7uDFN00CK1FN9cE"
-                    >
-                    </stripe-buy-button>
+                    <a href="https://buy.stripe.com/3cI28tfDj9K9dDP7sabEA01" class="button trial">Start Trial</a>
                     </div>
 
                 <div class="product-box">
@@ -306,11 +298,7 @@
                     <div class="price-note">Auto-renews monthly</div>
                     <p class="description">Get full access. Your dedicated British tutor will build a long-term learning plan to progressively improve your skills.</p>
                     
-                    <stripe-buy-button
-                        buy-button-id="buy_btn_1SN8diRVpngd0GtTyyPgjebs"
-                        publishable-key="pk_test_51SN8AfRVpngd0GtTRHiK0u2CY1cM3YwMZrxlMQ7Fcdqr5Zho0kdSBQkSbRKX1VoHICwOPVB1EtP65FJXcaY7uDFN00CK1FN9cE"
-                    >
-                    </stripe-buy-button>
+                    <a href="https://buy.stripe.com/6oU4gB76NbSh7fr5k2bEA00" class="button">Subscribe Now</a>
                     </div>
             </div>
         </div>
