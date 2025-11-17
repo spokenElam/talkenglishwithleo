@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- ▼▼▼ Updated Title ▼▼▼ -->
     <title>Talk English with Leo</title>
+    
+    <script async src="https://js.stripe.com/v3/buy-button.js"></script>
+    
     <style>
         /* --- Overall Style --- */
         body {
@@ -45,8 +47,8 @@
             color: #495057; /* Gray links */
         }
         .lang-switcher a.active { /* Bold current language */
-             font-weight: bold;
-             color: #0056b3;
+            font-weight: bold;
+            color: #0056b3;
         }
 
         /* --- Header --- */
@@ -175,6 +177,8 @@
             flex-grow: 1;
             color: #495057;
         }
+        /* NOTE: .button styles are kept but not strictly needed for the Stripe element, 
+           as Stripe styles its own button. They are kept for general consistency. */
         .button {
             display: block;
             background-color: #0056b3; /* Slightly darker blue */
@@ -260,7 +264,7 @@
                 margin: 5px 0;
             }
             .footer-nav span { /* Hide separators on small screens */
-                 display: none;
+                display: none;
             }
         }
 
@@ -268,50 +272,49 @@
 </head>
 <body>
 
-    <!-- ▼▼▼ Language Switcher ▼▼▼ -->
     <div class="lang-switcher">
-        <a href="index.html" class="active">English</a> | <!-- Set English as active -->
-        <a href="index-tc.html">繁體中文</a> |
+        <a href="index.html" class="active">English</a> | <a href="index-tc.html">繁體中文</a> |
         <a href="index-sc.html">简体中文</a>
     </div>
 
     <div class="container">
 
-        <!-- === Section 1: Header === -->
         <div class="header">
-            <!-- ▼▼▼ Corrected <br> tag ▼▼▼ -->
             <h1>Speak Confidently. <br>With an Authentic British Accent.</h1>
-            <!-- ▼▼▼ Text "(10+ years residency)" removed ▼▼▼ -->
             <p class="subtitle">Our senior British tutors provide daily 1-on-1 guidance to help you speak clearly, fluently, and confidently.</p>
         </div>
 
-        <!-- === Section 4: Pricing Options === (Moved Up) -->
         <div class="content-section pricing">
             <h2>Choose Your Starting Point</h2>
             <div class="pricing-grid">
-                <!-- Option A: Trial -->
                 <div class="product-box">
                     <h2>1-Week Trial</h2>
                     <div class="price">HKD $550</div>
                     <div class="price-note">One-time payment</div>
                     <p class="description">Experience 7 full days of daily missions and tutor feedback. A risk-free way to see if our service is right for you.</p>
-                    <!-- ▼▼▼ Link updated based on your previous input ▼▼▼ -->
-                    <a href="https://buy.stripe.com/3cI28tfDj9K9dDP7sabEA01" class="button trial">Start Trial</a>
-                </div>
+                    
+                    <stripe-buy-button
+                        buy-button-id="buy_btn_1SN8diRVpngd0GtTyyPgjebs"
+                        publishable-key="pk_test_51SN8AfRVpngd0GtTRHiK0u2CY1cM3YwMZrxlMQ7Fcdqr5Zho0kdSBQkSbRKX1VoHICwOPVB1EtP65FJXcaY7uDFN00CK1FN9cE"
+                    >
+                    </stripe-buy-button>
+                    </div>
 
-                <!-- Option B: Monthly -->
                 <div class="product-box">
                     <h2>Monthly Plan</h2>
                     <div class="price">HKD $1,980</div>
                     <div class="price-note">Auto-renews monthly</div>
                     <p class="description">Get full access. Your dedicated British tutor will build a long-term learning plan to progressively improve your skills.</p>
-                    <!-- ▼▼▼ Remember to paste your ACTUAL Monthly Plan link here later ▼▼▼ -->
-                    <a href="https://buy.stripe.com/6oU4gB76NbSh7fr5k2bEA00" class="button">Subscribe Now</a>
-                </div>
+                    
+                    <stripe-buy-button
+                        buy-button-id="buy_btn_1SN8diRVpngd0GtTyyPgjebs"
+                        publishable-key="pk_test_51SN8AfRVpngd0GtTRHiK0u2CY1cM3YwMZrxlMQ7Fcdqr5Zho0kdSBQkSbRKX1VoHICwOPVB1EtP65FJXcaY7uDFN00CK1FN9cE"
+                    >
+                    </stripe-buy-button>
+                    </div>
             </div>
         </div>
 
-        <!-- === Section 2: How It Works === -->
         <div class="content-section how-it-works">
             <h2>How Our Service Works</h2>
             <div class="how-it-works-steps">
@@ -329,7 +332,6 @@
             </div>
         </div>
 
-        <!-- === Section 3: Your Learning Journey === -->
         <div class="content-section journey">
             <h2>Your Learning Journey</h2>
             <p style="text-align: center; max-width: 600px; margin: -15px auto 30px auto;">Our service is a professional learning journey. Your tutor assesses your level and starts by building a solid foundation:</p>
@@ -345,7 +347,6 @@
             </div>
         </div>
 
-        <!-- === Section 5: Additional Custom Services === -->
         <div class="upsell">
             <p>Need specific preparation beyond daily English? We offer customized training for interviews, business presentations, storytelling, etc. These services are quoted separately.</p>
             <a href="[Your WhatsApp Link]">Contact Us via WhatsApp</a>
@@ -353,10 +354,8 @@
             <a href="mailto:contact.elamltd@gmail.com">Email: contact.elamltd@gmail.com</a>
         </div>
 
-        <!-- === Section 6: Footer === -->
-        <!-- ▼▼▼ Footer Navigation Updated ▼▼▼ -->
         <div class="footer">
-             <div class="footer-nav">
+            <div class="footer-nav">
                 <a href="index.html">Home</a> <span>|</span>
                 <a href="about.html">About Us</a> <span>|</span>
                 <a href="contact.html">Contact Us</a> <span>|</span>
@@ -370,4 +369,3 @@
     </div>
 </body>
 </html>
-
