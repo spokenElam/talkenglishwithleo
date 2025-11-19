@@ -3,50 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Updated Title -->
-    <title>Talk English with Leo - Daily English Coaching (Design 2)</title> 
-    <!-- 仅保留 Font Awesome 图标库 for structural icons -->
+    <!-- Updated Title --><title>Talk English with Leo - Daily English Coaching (Design 2)</title> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        /* BASE STYLES */
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang HK", "Microsoft JhengHei", sans-serif; line-height: 1.7; background-color: #f0f2f5; /* Light Gray Background */ color: #343a40; margin: 0; padding: 0; }
+        /* BASE STYLES & FULL-VIEWPORT SETUP */
+        html, body {
+            height: 100%; /* Important for full viewport height */
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang HK", "Microsoft JhengHei", sans-serif;
+            line-height: 1.7;
+            background-color: #f0f2f5; /* Light Gray Background */
+            color: #343a40;
+        }
         .container { max-width: 800px; margin: 0 auto; padding: 30px 20px; }
         h1, h2, h3 { color: #212529; } 
         a { color: #0056b3; text-decoration: none; } 
         a:hover { text-decoration: underline; }
 
-        /* Icon Styling */
-        .icon-large { font-size: 1.2em; margin-right: 10px; color: #0056b3; } 
-        
         .lang-switcher { text-align: center; padding: 12px; background-color: #e9ecef; font-size: 0.9em; border-bottom: 1px solid #dee2e6; }
         .lang-switcher a { margin: 0 12px; text-decoration: none; color: #495057; } .lang-switcher a.active { font-weight: bold; color: #0056b3; }
 
-        /* --- REVISED HEADER STYLES FOR VIDEO INTEGRATION --- */
-        .header { 
-            text-align: center; 
-            margin-bottom: 60px; 
-            padding-top: 20px; /* Reduced top padding to pull video closer to the top of the content */
-            padding-bottom: 40px;
-            background-color: #d9edf7; /* Very Light Blue */
+        /* --- NEW: Full-Viewport Hero Section (Left Image, Right Text) --- */
+        .hero-full-screen {
+            display: flex; /* Enable flexbox for side-by-side layout */
+            min-height: calc(100vh - 45px); /* Take full viewport height minus lang switcher height */
+            background-color: #d9edf7; /* Light Blue Background */
             color: #004085; /* Dark Blue Text */
-            border-radius: 8px;
-            border: 1px solid #cce5ff;
-        } 
-        
-        /* Video inside the Header */
-        .header video {
-            max-width: 90%; /* Video takes up a large portion of the container */
+            border-bottom: 1px solid #cce5ff;
+            align-items: center; /* Vertically center content */
+            justify-content: center; /* Horizontally center content */
+            padding: 20px; /* Overall padding for the hero section */
+            box-sizing: border-box; /* Include padding in height calculation */
+        }
+
+        .hero-image-section {
+            flex: 1; /* Allow image section to grow */
+            display: flex;
+            justify-content: center; /* Center image horizontally */
+            align-items: center; /* Center image vertically */
+            padding: 20px;
+            max-width: 50%; /* Max width for image section */
+        }
+        .hero-image-section img {
+            max-width: 100%;
             height: auto;
             border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            margin-bottom: 30px; /* Space between video and text */
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            object-fit: cover; /* Ensures image covers its container well */
+            max-height: calc(100vh - 100px); /* Limit image height within viewport */
+        }
+
+        .hero-text-section {
+            flex: 1; /* Allow text section to grow */
+            padding: 20px;
+            text-align: center;
+            max-width: 50%; /* Max width for text section */
+        }
+        .hero-text-section h1 { 
+            font-size: 2.8em; 
+            margin-bottom: 15px; 
+            color: #004085; 
+            line-height: 1.2;
+        } 
+        .hero-text-section .subtitle { 
+            font-size: 1.2em; 
+            color: #004085; 
+            max-width: 500px; 
+            margin: 0 auto; 
         }
         
-        .header h1, .header .subtitle { color: #004085; } /* Ensure text is dark blue */
-        .header h1 { font-size: 2.8em; margin-bottom: 15px; } 
-        .header .subtitle { font-size: 1.2em; max-width: 600px; margin: 0 auto; }
-        
-        /* --- CTA Button Enhancement (Green Accent for Trial) --- */
+        /* CTA Button Styling */
         .button { 
             display: block; background-color: #38a169; /* Green Accent */ color: #ffffff; padding: 12px 20px; text-decoration: none; border-radius: 5px; font-weight: 500; font-size: 1em; text-align: center; 
             transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.1s ease; 
@@ -87,7 +114,7 @@
         } 
         .product-box .price { color: #007bff; } /* Use vibrant blue */
 
-        /* --- REVISED: Daily Structure Styles for Grid Cards (Combining Best of D1 & D2) --- */
+        /* --- REVISED: Daily Structure Styles for Grid Cards --- */
         .daily-structure {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -161,15 +188,34 @@
             margin-right: 0;
         }
 
+        /* --- Responsive Adjustments --- */
+        @media (max-width: 768px) { /* Tablet and smaller screens */
+            .hero-full-screen {
+                flex-direction: column; /* Stack image and text vertically */
+                padding: 30px 20px; /* More vertical padding for stacked content */
+                min-height: auto; /* Allow height to adjust to content */
+            }
+            .hero-image-section,
+            .hero-text-section {
+                max-width: 100%; /* Take full width */
+            }
+            .hero-image-section {
+                padding-bottom: 30px; /* Space between image and text when stacked */
+            }
+            .hero-image-section img {
+                max-height: 60vh; /* Limit image height on smaller screens */
+            }
+            .hero-text-section h1 { font-size: 2.2em; }
+            .hero-text-section .subtitle { font-size: 1.1em; }
 
-        @media (max-width: 650px) { 
             .product-box { flex-basis: 100%; width: 100%; } 
             .pricing-grid { gap: 15px; } 
-            .header h1 { font-size: 2.2em; } 
-            .header .subtitle { font-size: 1.1em; } 
+            .daily-structure { grid-template-columns: 1fr; } 
+        }
+
+        @media (max-width: 650px) { 
             .footer-nav a { display: block; margin: 5px 0; } 
             .footer-nav span { display: none; } 
-            .daily-structure { grid-template-columns: 1fr; } 
         }
     </style>
 </head>
@@ -180,19 +226,18 @@
         <a href="index-tc.html">繁體中文</a> | <a href="index-sc.html">简体中文</a>
     </div>
 
-    <div class="container">
-        
-        <!-- Updated Header: Now contains the video, text, and subtitle in one clean box -->
-        <div class="header">
-            <!-- VIDEO SECTION - TOP CENTER -->
-            <!-- 確保 icon.mp4 在根目錄。加入 autoplay, loop, muted, playsinline 實現無縫自動播放 -->
-            <video src="icon.mp4" autoplay loop muted playsinline></video>
-            
+    <!-- NEW: Full-Viewport Hero Section --><div class="hero-full-screen">
+        <div class="hero-image-section">
+            <!-- IMPORTANT: Replace 'photo.jpg' with your actual image file name and path --><img src="photo.jpg" alt="Talk English with Leo Coach">
+        </div>
+        <div class="hero-text-section">
             <h1>Speak English Confidently.<br>Daily Coaching, Real Results.</h1> 
             <p class="subtitle">Our experienced foreign coach provides daily one-on-one guidance to help you build fluency, clarity, and confidence.</p> 
         </div>
+    </div>
 
-        <div class="content-section pricing">
+    <div class="container">
+        <!-- The rest of your content sections will follow after the hero --><div class="content-section pricing">
             <h2>Choose the Plan That's Right for You</h2>
             <div class="pricing-grid">
                 <div class="product-box">
@@ -215,7 +260,6 @@
             </div>
         </div>
         
-        <!-- SECTION: WEEKLY STRUCTURE (New Grid/Card Layout with Numbering) -->
         <section class="content-section journey">
             <h2>Our Weekly Study Plan</h2>
             <p style="text-align: center; max-width: 600px; margin: -15px auto 30px auto;">
@@ -227,7 +271,6 @@
             </p>
             
             <div class="daily-structure">
-                <!-- MONDAY: Vocabulary & Pronunciation -->
                 <div class="daily-step">
                     <h3 class="day-title"><span class="day-number">1</span> Monday: Vocab & Pronunciation</h3>
                     <ul>
@@ -236,8 +279,6 @@
                         <li>Submit a voice recording for detailed feedback</li>
                     </ul>
                 </div>
-
-                <!-- TUESDAY: Sentence Building -->
                 <div class="daily-step">
                     <h3 class="day-title"><span class="day-number">2</span> Tuesday: Sentence Building</h3>
                     <ul>
@@ -246,8 +287,6 @@
                         <li>Corrections are provided for grammar and speaking mistakes</li>
                     </ul>
                 </div>
-                
-                <!-- WEDNESDAY: Practical Output - Asking -->
                 <div class="daily-step">
                     <h3 class="day-title"><span class="day-number">3</span> Wednesday: Practical Output - Asking</h3>
                     <ul>
@@ -256,8 +295,6 @@
                         <li>Receive feedback to optimize your natural phrasing</li>
                     </ul>
                 </div>
-
-                <!-- THURSDAY: Practical Q&A -->
                 <div class="daily-step">
                     <h3 class="day-title"><span class="day-number">4</span> Thursday: Practical Q&A</h3>
                     <ul>
@@ -266,8 +303,6 @@
                         <li>Focus on developing fluency in conversation</li>
                     </ul>
                 </div>
-
-                <!-- FRIDAY: Weekly Sync-up (Centered) -->
                 <div class="daily-step" style="grid-column: span 1 / auto; max-width: 350px; margin: 0 auto;">
                     <h3 class="day-title"><span class="day-number">5</span> Friday: Weekly Sync-up</h3>
                     <ul>
@@ -279,7 +314,6 @@
             </div>
         </section>
         
-        <!-- Updated How It Works Section (Steps Applied - No Icons, Light Accent) -->
         <div class="content-section how-it-works" style="margin-top: 0;">
             <h2>How the Service Works (The Daily Cycle)</h2>
             <div class="how-it-works-steps">
@@ -290,7 +324,6 @@
                 </ul>
             </div>
         </div>
-
 
         <div class="upsell">
             <p>In addition to our core daily coaching, we offer customized training for specific needs (e.g., interviews, business presentations, public speaking skills). Such services require a separate quotation.</p>
