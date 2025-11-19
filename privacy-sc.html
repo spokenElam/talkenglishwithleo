@@ -1,122 +1,190 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hans">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms of Service (服务条款)</title>
+    <title>隐私政策 - Talk English with Leo</title> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; margin: 20px; line-height: 1.6; }
-        .container { max-width: 800px; margin: auto; padding: 20px; border: 1px solid #eee; border-radius: 8px; }
-        h1, h2, h3 { color: #333; }
-        /* 使用简体中文字体 */
-        .zh-version { font-family: "PingFang SC", "Microsoft YaHei", sans-serif; color: #555; }
-        .separator { border-top: 2px solid #000; margin: 40px 0; }
-        ul li { margin-bottom: 5px; } 
+        /* --- Inherited Styles from home.html --- */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+            line-height: 1.7;
+            background-color: #f0f2f5;
+            color: #343a40;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 30px 20px; }
+        h1, h2, h3 { color: #212529; } 
+        a { color: #0056b3; text-decoration: none; } 
+        a:hover { text-decoration: underline; }
+
+        /* Language Switcher */
+        .lang-switcher { text-align: center; padding: 12px; background-color: #e9ecef; font-size: 0.9em; border-bottom: 1px solid #dee2e6; }
+        .lang-switcher a { margin: 0 12px; text-decoration: none; color: #495057; } .lang-switcher a.active { font-weight: bold; color: #0056b3; }
+
+        /* Page Header */
+        .page-header {
+            background-color: #d9edf7;
+            color: #004085;
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom: 1px solid #cce5ff;
+        }
+        .page-header h1 {
+            font-size: 2.5em;
+            margin: 0;
+            color: #004085;
+        }
+        .page-header p {
+            font-size: 1.1em;
+            opacity: 0.8;
+            margin-top: 10px;
+        }
+
+        /* Content Sections */
+        .content-section { 
+            margin-bottom: 40px; 
+            padding: 40px; 
+            background-color: #ffffff; 
+            border-radius: 8px; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
+        }
+        
+        /* Policy Specific Styles */
+        .policy-content h2 { 
+            font-size: 1.5em; 
+            color: #007bff; 
+            margin-top: 30px; 
+            margin-bottom: 15px; 
+            border-bottom: 1px solid #eee; 
+            padding-bottom: 10px;
+        }
+        .policy-content h3 {
+            font-size: 1.2em;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            color: #495057;
+        }
+        .policy-content ul {
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+        .policy-content li {
+            margin-bottom: 5px;
+        }
+        .policy-content p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        /* Footer Styles */
+        .footer { text-align: center; margin-top: 50px; padding-bottom: 30px; font-size: 0.9em; color: #6c757d; }
+        .footer-nav { margin-bottom: 15px; }
+        .footer-nav a { color: #6c757d; margin: 0 8px; }
+        .footer-nav a:hover { color: #007bff; }
+
+        @media (max-width: 768px) {
+            .page-header { padding: 40px 20px; }
+            .page-header h1 { font-size: 2em; }
+            .content-section { padding: 25px; }
+        }
+        @media (max-width: 650px) { 
+            .footer-nav a { display: block; margin: 5px 0; } 
+            .footer-nav span { display: none; } 
+        }
     </style>
 </head>
 <body>
+
+    <!-- Navigation -->
+    <div class="lang-switcher">
+        <a href="privacy.html">English</a> |
+        <a href="privacy-tc.html">繁體中文</a> | <a href="privacy-sc.html" class="active">简体中文</a>
+    </div>
+
+    <div class="page-header">
+        <h1>隐私政策</h1>
+        <p>Privacy Policy</p>
+    </div>
+
     <div class="container">
-
-        <!-- 
-        ========================================
-        ENGLISH VERSION (Remains the same)
-        ========================================
-        -->
-
-        <h1>Terms of Service</h1>
-        <p>Last Updated: 27-10-2025</p>
-        <p>These Terms of Service ("Terms") constitute a legal agreement between you ("Student", "you") and E-Lam Limited ("the Company", "we", "us"). By paying for and using our Service, you acknowledge that you have read, understood, and agree to be bound by these Terms.</p>
-        <hr>
-
-        <h2>1. Service Description</h2>
-        <p>We provide a "Daily Mission + Coach Feedback" online English coaching service ("Service"). This Service includes:</p>
-        <ul>
-            <li>One (1) learning mission sent via WhatsApp / WeChat per calendar day (Monday to Sunday, including public holidays).</li>
-            <li>A 10-minute scheduled synchronous (live) text-messaging session with your tutor per week.</li>
-        </ul>
-        <p>This Service does not include: Instant or on-demand replies. Our service commitment ("SLA") is that your submitted task will receive personalized feedback from your tutor within 24 hours of submission. This SLA applies 7 days a week.</p>
-
-        <h2>2. Payment, Cancellation, and Refund Policy</h2>
         
-        <h3>2.1 Payment and Subscription</h3>
-        <p>The Service is billed on a subscription basis (monthly or annually) and is pre-paid at the start of each billing cycle. Your subscription will automatically renew (on a monthly or annual basis) until it is cancelled in accordance with Section 2.3.</p>
-        
-        <h3>2.2 Refund Policy</h3>
-        <p>All fees paid are non-refundable. Once a payment for a billing cycle (whether monthly or annual) is made, it is final. We do not provide any pro-rata refunds or credits for partially used periods or early cancellations.</p>
+        <section class="content-section policy-content">
+            <p style="text-align: center; color: #666; margin-top: 0;">最后更新日期：2025年 10月27日</p>
+            <p>本政策适用于 E-Lam Limited（下称“本公司”或“我们”）所提供的服务。</p>
 
-        <h3>2.3 Cancellation Policy</h3>
-        <p>You must notify us of your intent to cancel your subscription at least 48 hours before your next billing date (renewal date) by emailing us at contact.elamltd@gmail.com.</p>
-        <p>The cancellation will take effect at the end of your current paid billing cycle. You will continue to have access to the Service until the end of that period (month or year).</p>
-        
-        <h2>3. Student Code of Conduct</h2>
-        <p>You agree to interact with our tutors in a respectful and professional manner. You agree not to engage in any form of harassment, abuse, discrimination, threats, or inappropriate language. You also agree not to send excessive messages or make unreasonable demands outside of the stated service hours ("spamming the tutor").</p>
-        <p>If you violate this Code of Conduct, we reserve the right, at our sole discretion, to immediately suspend or permanently terminate your service. In such cases, all fees paid will be forfeited and will not be refunded.</p>
-        
-        <h2>4. Intellectual Property</h2>
-        <p>We own all intellectual property rights to the curriculum, daily missions, teaching content, tutor corrections, and feedback provided in the Service. We grant you a limited, non-exclusive, non-transferable license to use these materials solely for your own personal learning.</p>
-        <p>You are strictly prohibited from sharing our materials or service content in any form (including, but not limited to, screenshots, forwarding, recording, copying, reproducing, distributing, reselling, or public display).</p>
-
-        <h2>5. Governing Law</h2>
-        <p>These Terms shall be governed by and construed in accordance with the laws of the Hong Kong Special Administrative Region.</p>
-
-        <h2>6. Contact Us</h2>
-        <p>If you have any questions about these Terms of Service, please contact us at contact.elamltd@gmail.com.</p>
-
-        <h2>7. Language</h2>
-        <p>These Terms are prepared in both English and Chinese. In the event of any discrepancy or conflict between the English and Chinese versions, the English version shall prevail.</p>
-
-        <!-- 
-        ========================================
-        SIMPLIFIED CHINESE VERSION
-        ========================================
-        -->
-
-        <hr class="separator">
-
-        <div class="zh-version">
-            <h1>服务条款</h1>
-            <p>最后更新日期：2025年 10月27日</p>
-            <p>本服务条款（下称“本条款”）构成您（下称“学生”或“您”）与 E-Lam Limited（下称“本公司”或“我们”）之间的法律协议。当您付款并使用我们的服务时，即表示您已阅读、理解并同意受本条款约束。</p>
-            <hr>
-
-            <h2>1. 服务描述</h2>
-            <p>我们提供“每日任务 + 导师批改”在线英语指导服务（下称“本服务”）。本服务包含：</p>
+            <h2>1. 我们收集的资料</h2>
+            <p>为向你提供我们的“每日任务 + 导师批改”英语服务，我们将收集及处理以下类型的个人资料：</p>
             <ul>
-                <li>每个日历日（周一至周日，包含公共假期）通过 WhatsApp / WeChat 收到一 (1) 项学习任务。</li>
-                <li>每周一次，与导师进行 10 分钟的预定同步（实时）文本问答时间。</li>
+                <li><strong>帐户资料：</strong> 你的真实姓名、电邮地址，以及你的 WhatsApp 或 WeChat 帐户号码。</li>
+                <li><strong>付款资料：</strong> 你的付款交易记录及账单详情。敏感的信用卡资料将由我们的支付处理商 (Stripe) 直接处理，我们不会储存。</li>
+                <li><strong>服务营运资料：</strong> 你与导师之间的所有 1 对 1 通讯记录，包括文字讯息、图片。</li>
+                <li><strong>语音讯息 (Voice Messages)：</strong> 你为完成学习任务而提交的录音。</li>
+                <li><strong>视频通话或录影 (Video Messages or Calls)：</strong> 在你同意下，为进行同步聊天或教学而可能产生的资料。</li>
             </ul>
-            <p>本服务不包含：即时或按需 (On-demand) 回复。我们的服务承诺 ("SLA") 是，您的导师将在您提交任务后的 24 小时内提供个性化批改。此服务承诺适用于每周七天。</p>
 
-            <h2>2. 付款、取消及退款政策</h2>
-            
-            <h3>2.1 付款与订阅</h3>
-            <p>本服务按月费或年费订阅制收取，并在每个账单周期开始时预先支付。您的订阅将自动续订（按月或按年），直到您根据第 2.3 条取消为止。</p>
-            
-            <h3>2.2 退款政策</h3>
-            <p>所有已支付的费用均不设退款。一旦您支付了某个账单周期的费用（无论是月费还是年费），该费用均为最终费用，不可退还。我们不会为未使用的服务时间或中途取消提供任何按比例的退款或抵免。</p>
+            <h2>2. 我们如何使用你的资料</h2>
+            <p>我们仅将你的个人资料用于以下特定目的：</p>
+            <ul>
+                <li><strong>提供及管理服务：</strong> 处理你的注册、管理你的帐户、发送每日任务，并由导师提供个人化的批改和反馈。</li>
+                <li><strong>处理付款：</strong> 管理你的每月订阅、处理账单及防止欺诈。</li>
+                <li><strong>质量保证及导师培训：</strong> 为了确保教学质量符合我们的标准，并为我们的导师提供持续的专业培训，本公司的管理人员可能会查阅你与导师之间的对话及服务记录。</li>
+                <li><strong>市场推广（在取得你同意下）：</strong> 我们不会在未经你事先书面同意的情况下，使用你的学习成果（例如你的功课、评语或进步）作市场推广用途。如我们希望分享你的成功案例，我们将另行与你联系以取得你的明确许可。</li>
+                <li><strong>通讯：</strong> 使用你的电邮或 WhatsApp/WeChat 向你发送有关你帐户、服务更新或重大政策变更的通知。</li>
+            </ul>
 
-            <h3>2.3 取消政策</h3>
-            <p>您必须在您的下一个账单日期（续订日期）至少 48 小时前，通过电邮 contact.elamltd@gmail.com 通知我们取消服务。</p>
-            <p>取消将在当前已付款账单周期结束时生效。您仍可继续享用服务直至该周期（月或年）结束。</p>
-            
-            <h2>3. 学生行为准则</h2>
-            <p>您同意以尊重和专业的态度与我们的导师沟通。您同意不作出任何形式的骚扰、辱骂、歧视、威胁或不当言论。您亦同意不在服务时间（即 24 小时批改承诺）之外，向导师传送过多信息或提出不合理的要求（“轰炸导师”）。</p>
-            <p>如您违反上述行为准则，本公司保留唯一酌情权，可立即暂停或永久终止向您提供服务。在此情况下，所有已付费用将不获退还。</p>
-            
-            <h2>4. 知识产权</h2>
-            <p>本公司拥有本服务中提供的所有教材、每日任务、教学内容、导师批改和反馈的全部知识产权。我们授予您一个有限的、非独家的、不可转让的许可，仅为您个人学习目的使用这些材料。</p>
-            <p>您严格禁止以任何形式（包括但不限于截图、转发、录制、复制、转载、分发、转售或公开展示）分享我们的教材或服务内容。</p>
+            <h2>3. 我们与谁分享你的资料</h2>
+            <p>我们仅在绝对必要的情况下，与以下第三方分享你的个人资料：</p>
+            <ul>
+                <li><strong>Freelance 导师：</strong> 我们会将你的帐户资料（姓名、联络方式）和所有服务营运资料分享给获分配的 Freelance 导师，以便他们提供 1 对 1 教学。这些导师是独立承包商，可能位于全球任何地方（即香港境外），他们受合约约束必须严格保密你的资料。</li>
+                <li><strong>科技及云端供应商：</strong> 我们依赖以下第三方供应商来营运服务：
+                    <ul>
+                        <li>Meta (WhatsApp) / Tencent (WeChat): 用于传递教学讯息。</li>
+                        <li>Stripe: 用于处理你的付款。</li>
+                        <li>Google (Google Drive): 可能用于储存教材或备份营运资料。</li>
+                        <li>GitHub: 用于寄存我们的网站页面（包括本政策）。</li>
+                    </ul>
+                </li>
+                <li><strong>法律要求：</strong> 如果香港法律或执法机构提出具法律约束力的要求。</li>
+            </ul>
 
-            <h2>5. 管辖法律</h2>
-            <p>本条款受香港特别行政区法律管辖并按其解释。</p>
+            <h2>4. 资料保留及删除</h2>
+            <ul>
+                <li><strong>保留期限：</strong> 当你取消订阅或终止服务后，我们将在终止日起计的 6 个月内，安全地删除你的个人资料（包括聊天记录和学习成果）。我们保留在匿名化处理后（即无法再识别到你个人）保留部分数据，仅用于内部统计和服务改进。</li>
+                <li><strong>例外情况：</strong> 即使在你终止服务后，我们仍可能保留必要的交易或付款记录，以履行我们的法律、税务或审计义务。</li>
+            </ul>
 
-            <h2>6. 联系我们</h2>
-            <p>如您对本服务条款有任何疑问，请电邮至 contact.elamltd@gmail.com。</p>
+            <h2>5. 你在 PDPO 下的权利</h2>
+            <p>根据香港《个人资料(私隐)条例》(PDPO)，你有权：</p>
+            <ul>
+                <li><strong>查阅资料：</strong> 要求查阅我们持有你的个人资料副本。</li>
+                <li><strong>改正资料：</strong> 要求改正任何不准确的资料。</li>
+                <li><strong>删除资料：</strong> 要求删除你的个人资料（受上述第 4 条的保留政策约束）。</li>
+            </ul>
+            <p><strong>如何行使权利：</strong> 如你希望行使上述任何权利，你必须透过电邮向我们的资料保护联络人提出书面请求。为保护你的私隐，我们将在处理你的请求前，采取合理步骤核实你的身份。</li>
+
+            <h2>6. 联络我们</h2>
+            <p>如你对本私隐政策有任何疑问，或希望行使你的私隐权利，请透过以下电邮联絡我们的资料保护团队：<a href="mailto:contact.elamltd@gmail.com">contact.elamltd@gmail.com</a></p>
 
             <h2>7. 语言</h2>
-            <p>本条款以英文和中文编写。如果英文版本与中文版本之间存在任何歧义或不一致，概以英文版本为准。</p>
+            <p>本政策以英文和中文编写。如果英文版本与中文版本之间存在任何歧义或不一致，概以英文版本为准。</p>
+        </section>
+
+        <div class="footer">
+            <div class="footer-nav"> 
+                <a href="index-sc.html">首页</a> <span>|</span>
+                <a href="about-sc.html">关于我们</a> <span>|</span>
+                <a href="contact-sc.html">联络我们</a> <span>|</span>
+                <a href="terms-sc.html">服务条款</a> <span>|</span>
+                <a href="privacy-sc.html" style="font-weight: bold; color: #343a40;">隐私政策</a> <span>|</span>
+                <a href="refund-policy-sc.html">退款政策</a>
+            </div>
+            <p>&copy; 2025 E-Lam Limited. 版权所有。</p>
         </div>
-        
+
     </div>
 </body>
 </html>
