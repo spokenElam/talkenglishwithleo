@@ -189,6 +189,31 @@
             content: ""; 
             margin-right: 0;
         }
+        
+        /* NEW: Simplified Upsell/Contact Links */
+        .upsell-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .upsell-links a {
+            display: flex;
+            align-items: center;
+            padding: 8px 15px;
+            border: 1px solid #007bff;
+            border-radius: 5px;
+            color: #007bff;
+            transition: background-color 0.2s;
+        }
+        .upsell-links a:hover {
+            background-color: #e9ecef;
+            text-decoration: none;
+        }
+        .upsell-links a i {
+            margin-right: 8px;
+        }
+
 
         /* --- Responsive Adjustments --- */
         @media (max-width: 768px) { /* Tablet and smaller screens */
@@ -328,11 +353,19 @@
             </div>
         </div>
 
+        <!-- UPDATED UPSELL/CONTACT SECTION -->
         <div class="upsell">
             <p>In addition to our core daily coaching, we offer customized training for specific needs (e.g., interviews, business presentations, public speaking skills). Such services require a separate quotation.</p>
-            <a href="[Your WhatsApp Link]">Contact Us via WhatsApp</a>
-            <a href="[Your WeChat QR Code Link]">Contact Us via WeChat</a>
-            <a href="mailto:contact.elamltd@gmail.com">Email us at contact.elamltd@gmail.com</a>
+            <div class="upsell-links">
+                <!-- WhatsApp Link -->
+                <a href="https://wa.me/message/XS7V5VSJRALRG1" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
+                <!-- Email Link (Simplified text) -->
+                <a href="mailto:contact.elamltd@gmail.com">
+                    <i class="fas fa-envelope"></i> Email
+                </a>
+            </div>
         </div>
 
         <div class="footer">
