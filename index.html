@@ -45,13 +45,15 @@
             padding: 20px;
             max-width: 50%; /* Max width for image section */
         }
-        .hero-image-section img {
+        /* 支援圖片和影片的樣式 */
+        .hero-image-section img,
+        .hero-image-section video {
             max-width: 100%;
             height: auto;
             border-radius: 8px;
             box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-            object-fit: cover; /* Ensures image covers its container well */
-            max-height: calc(100vh - 100px); /* Limit image height within viewport */
+            object-fit: cover; /* 確保媒體內容覆蓋其容器並保持比例 */
+            max-height: calc(100vh - 100px); /* 限制媒體高度在視口內 */
         }
 
         .hero-text-section {
@@ -202,8 +204,9 @@
             .hero-image-section {
                 padding-bottom: 30px; /* Space between image and text when stacked */
             }
-            .hero-image-section img {
-                max-height: 60vh; /* Limit image height on smaller screens */
+            .hero-image-section img,
+            .hero-image-section video {
+                max-height: 60vh; /* Limit media height on smaller screens */
             }
             .hero-text-section h1 { font-size: 2.2em; }
             .hero-text-section .subtitle { font-size: 1.1em; }
@@ -228,7 +231,7 @@
 
     <!-- NEW: Full-Viewport Hero Section --><div class="hero-full-screen">
         <div class="hero-image-section">
-            <!-- IMPORTANT: Replace 'photo.jpg' with your actual image file name and path --><img src="photo.jpg" alt="Talk English with Leo Coach">
+            <!-- 替換為 icon.mp4 影片，並設定自動播放、循環和靜音 --><video src="icon.mp4" autoplay loop muted playsinline title="Talk English with Leo"></video>
         </div>
         <div class="hero-text-section">
             <h1>Speak English Confidently.<br>Daily Coaching, Real Results.</h1> 
