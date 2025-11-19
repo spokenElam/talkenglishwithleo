@@ -214,6 +214,15 @@
             margin-right: 8px;
         }
 
+        /* Footer Styles */
+        .footer { text-align: center; margin-top: 50px; padding-bottom: 30px; font-size: 0.9em; color: #6c757d; }
+        .footer-nav { margin-bottom: 15px; }
+        .footer-nav a { 
+            color: #6c757d; /* Changed back to grey */
+            margin: 0 8px; 
+        }
+        .footer-nav a:hover { color: #007bff; }
+
 
         /* --- Responsive Adjustments --- */
         @media (max-width: 768px) { /* Tablet and smaller screens */
@@ -371,7 +380,8 @@
 
         <div class="footer">
             <div class="footer-nav"> 
-                <a href="index.html">Home</a> <span>|</span>
+                <!-- Removed 'Contact Us' Link -->
+                <a href="index.html" style="font-weight: bold; color: #343a40;">Home</a> <span>|</span>
                 <a href="about.html">About Us</a> <span>|</span>
                 <a href="terms.html">Terms of Service</a> <span>|</span>
                 <a href="privacy.html">Privacy Policy</a> <span>|</span>
