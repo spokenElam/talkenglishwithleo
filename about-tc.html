@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>服務條款 - Talk English with Leo</title> 
+    <title>關於我們 - Talk English with Leo</title> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         /* --- Inherited Styles from home.html --- */
@@ -11,7 +11,7 @@
             height: 100%;
             margin: 0;
             padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang HK", "Microsoft JhengHei", sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang TC", "Microsoft JhengHei", sans-serif; /* Updated font for TC */
             line-height: 1.7;
             background-color: #f0f2f5;
             color: #343a40;
@@ -52,32 +52,57 @@
             border-radius: 8px; 
             box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
         }
-        
-        /* Terms Specific Styles */
-        .terms-content h2 { 
-            font-size: 1.5em; 
-            color: #007bff; 
-            margin-top: 30px; 
-            margin-bottom: 15px; 
+        .content-section h2 { 
+            font-size: 1.8em; 
+            color: #343a40; 
+            margin-top: 0; 
+            margin-bottom: 30px; 
+            text-align: center; 
             border-bottom: 1px solid #eee; 
-            padding-bottom: 10px;
+            padding-bottom: 15px; 
         }
-        .terms-content h3 {
-            font-size: 1.2em;
-            margin-top: 20px;
-            margin-bottom: 10px;
-            color: #495057;
+
+        /* About Block Styles */
+        .about-block {
+            margin-bottom: 40px;
         }
-        .terms-content ul {
-            padding-left: 20px;
+        .about-block:last-child {
+            margin-bottom: 0;
+        }
+        .about-block h3 {
+            color: #007bff;
+            font-size: 1.4em;
             margin-bottom: 15px;
+            border-left: 4px solid #007bff;
+            padding-left: 12px;
         }
-        .terms-content li {
-            margin-bottom: 5px;
-        }
-        .terms-content p {
+        .about-block p {
             margin-bottom: 15px;
             text-align: justify;
+        }
+        
+        /* List Styles */
+        .about-list {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 15px;
+        }
+        .about-list li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 10px;
+        }
+        .about-list li:before {
+            content: "\f00c";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 4px;
+            color: #28a745;
+        }
+        .about-list strong {
+            color: #0056b3;
         }
 
         /* Footer Styles */
@@ -85,6 +110,14 @@
         .footer-nav { margin-bottom: 15px; }
         .footer-nav a { color: #6c757d; margin: 0 8px; }
         .footer-nav a:hover { color: #007bff; }
+
+        /* Button Styles */
+        .button { 
+            display: inline-block; background-color: #007bff; color: #ffffff; padding: 12px 30px; text-decoration: none; border-radius: 5px; font-weight: 500; font-size: 1em; text-align: center; 
+            transition: background-color 0.2s ease, transform 0.1s ease; 
+            border: none; cursor: pointer; margin-top: 20px;
+        } 
+        .button:hover { background-color: #0056b3; transform: translateY(-1px); color: #fff; } 
 
         @media (max-width: 768px) {
             .page-header { padding: 40px 20px; }
@@ -99,73 +132,72 @@
 </head>
 <body>
 
-    <!-- Navigation -->
     <div class="lang-switcher">
-        <a href="terms.html">English</a> |
-        <a href="terms-tc.html" class="active">繁體中文</a> | <a href="terms-sc.html">简体中文</a>
+        <a href="about.html">English</a> |
+        <a href="about-tc.html" class="active">繁體中文</a> | <a href="about-sc.html">简体中文</a>
     </div>
 
     <div class="page-header">
-        <h1>服務條款</h1>
-        <p>Terms of Service</p>
+        <h1>關於我們</h1>
+        <p>About Us</p>
     </div>
 
     <div class="container">
         
-        <section class="content-section terms-content">
-            <h2 style="margin-top: 0; border-bottom: none; color: #343a40; font-size: 1.8em; text-align: center;">服務條款</h2>
-            <p style="text-align: center; color: #666;">最後更新日期：2025年 10月27日</p>
-            <p>本服務條款（下稱“本條款”）構成您（下稱“學生”或“您”）與 E-Lam Limited（下稱“本公司”或“我們”）之間的法律協議。當您付款並使用我們的服務時，即表示您已閱讀、理解並同意受本條款約束。</p>
-
-            <h2>1. 服務描述</h2>
-            <p>我們提供“每日任務 + 導師批改”在線英語指導服務（下稱“本服務”）。本服務按每週週期運作：</p>
-            <ul>
-                <li><strong>週一至週四：</strong> 每天通過 WhatsApp / WeChat 收到一 (1) 項學習任務。</li>
-                <li><strong>週五：</strong> 專注於每週總結與作業檢討（不分派新任務）。</li>
-            </ul>
+        <section class="content-section">
             
-            <h3>任務有效期與截止時間</h3>
-            <p>當週分派的所有學習任務，其提交有效期截至<strong>當週週四 23:59（香港時間）</strong>。在此截止時間之後收到的作業通常<strong>不予批改</strong>。<strong>然而，本公司保留最終酌情權，可決定是否接受或處理逾期提交的作業。</strong></p>
+            <div class="about-block">
+                <h3>我們的使命</h3>
+                <p>
+                    Talk English with Leo (由 E-Lam Limited 營運) 的創立宗旨很簡單：幫助像您一樣的學習者，不僅僅是學習英文語法，更能真正自信地開口說出流利、地道的英語。
+                </p>
+                <p>
+                    我們理解許多人在學校學了多年英文，但在實際對話中仍然感到猶豫或不自然。因此，我們設計了獨特的<strong>「每週循環・每日焦點」(Daily Focus)</strong> 學習模式，讓您每天都能在真實的語言環境中沉浸，並獲得專業導師的個性化反饋。
+                </p>
+            </div>
 
-            <h3>批改承諾 (SLA)</h3>
-            <p>我們的服務承諾 ("SLA") 是，您的導師將於<strong>工作日內 24 小時內</strong>（以您的<strong>實際提交時間</strong>起計）提供個性化批改。</p>
-            <p>於週五、週末或公眾假期提交的任務，將順延至下一個工作日處理。本服務承諾受限於不可抗力事件（如互聯網中斷、惡劣天氣）或已預先通知的導師休假。</p>
+            <div class="about-block">
+                <h3>我們的學習模式</h3>
+                <p>
+                    我們相信持續與結構化的練習是成功的關鍵。不同於傳統課程，我們為您規劃了週一至週五的系統性學習流程，確保您從輸入到輸出都能全面掌握：
+                </p>
+                <ul class="about-list">
+                    <li><strong>週一至週二：</strong> 專注於<strong>詞彙與造句</strong>，打好基礎。</li>
+                    <li><strong>週三至週四：</strong> 進入<strong>模擬實戰</strong>，練習主動提問與即時應答。</li>
+                    <li><strong>週五：</strong> 進行<strong>每週討論</strong>，總結學習成效並解答疑難。</li>
+                </ul>
+                <p style="margin-top: 15px; font-style: italic; color: #666;">
+                    通過每週可自由選擇的實用主題（如餐廳點餐、交通問路），我們讓學習與您的生活緊密連結。
+                </p>
+            </div>
 
-            <h2>2. 付款、取消及退款政策</h2>
-            
-            <h3>2.1 付款與訂閱</h3>
-            <p>本服務按月費或年費訂閱制收取，並在每個賬單週期開始時預先支付。您的訂閱將自動續訂，直到您根據第 2.3 條取消為止。</p>
-            
-            <h3>2.2 退款政策</h3>
-            <p>所有已支付的費用均不設退款。一旦您支付了某個賬單週期的費用，該費用均為最終費用，不可退還。我們不會為未使用的服務時間或中途取消提供任何按比例的退款或抵免。<strong>在特殊情況下，本公司保留酌情考慮例外的權利。</strong></p>
+            <div class="about-block">
+                <h3>我們的導師</h3>
+                <p>
+                    我們引以為傲的是我們的<strong>外籍導師團隊</strong>。每一位導師都是經驗豐富的外籍人士，他們不僅精通英語，更深入了解語言背後的文化細微差別。他們擅長教授地道的英語用法，並致力於幫助您克服開口說英語的恐懼，達成您的學習目標。
+                </p>
+            </div>
 
-            <h3>2.3 取消政策</h3>
-            <p>您必須在您的下一個賬單日期（續訂日期）至少 48 小時前，通過電郵 <a href="mailto:contact.elamltd@gmail.com">contact.elamltd@gmail.com</a> 或 WhatsApp 通知我們取消服務。<strong>取消申請以收到我們的確認為準。</strong></p>
-            <p>取消將在當前已付款賬單週期結束時生效。</p>
-            
-            <h2>3. 學生行為準則</h2>
-            <p>您同意以尊重和專業的態度與我們的導師溝通。您同意不作出任何形式的騷擾、辱罵、歧視、威脅或不當言論。您亦同意不在服務時間（即 24 小時批改承諾）之外，向導師傳送過多信息或提出不合理的要求（“轟炸導師”）。</p>
-            <p>如您違反上述行為準則，本公司保留唯一酌情權，可立即暫停或永久終止向您提供服務，且不予退款。</p>
-            
-            <h2>4. 知識產權</h2>
-            <p>本公司擁有本服務中提供的所有教材、每日任務、教學內容、導師批改和反饋的全部知識產權。我們授予您一個有限的、非獨家的許可，僅為您個人學習目的使用這些材料。<strong>未經本公司書面許可，您同意不以任何形式公開分享、轉售或分發我們的教材。</strong></p>
+            <div class="about-block">
+                <h3>我們的承諾</h3>
+                <p>
+                    我們致力於提供高質量、個性化且有效的英語指導服務。我們相信，通過每日持續的練習和專業外籍導師的引導，任何人都可以充滿自信地使用英語溝通。
+                </p>
+            </div>
 
-            <h2>5. 管轄法律</h2>
-            <p>本條款受香港特別行政區法律管轄並按其解釋。</p>
+            <div style="text-align: center; margin-top: 50px; border-top: 1px solid #eee; padding-top: 30px;">
+                <p>準備好開始您的英語旅程了嗎？</p>
+                <a href="index-tc.html#weekly-plan" class="button">查看課程計劃</a>
+            </div>
 
-            <h2>6. 聯繫我們</h2>
-            <p>如您對本服務條款有任何疑問，請電郵至 <a href="mailto:contact.elamltd@gmail.com">contact.elamltd@gmail.com</a>。</p>
-
-            <h2>7. 語言</h2>
-            <p>本條款以英文和中文編寫。如果英文版本與中文版本之間存在任何歧義或不一致，概以英文版本為準。</p>
         </section>
 
         <div class="footer">
             <div class="footer-nav"> 
                 <a href="index-tc.html">首頁</a> <span>|</span>
-                <a href="about-tc.html">關於我們</a> <span>|</span>
+                <a href="about-tc.html" style="font-weight: bold; color: #343a40;">關於我們</a> <span>|</span>
                 <a href="contact-tc.html">聯絡我們</a> <span>|</span>
-                <a href="terms-tc.html" style="font-weight: bold; color: #343a40;">服務條款</a> <span>|</span>
+                <a href="terms-tc.html">服務條款</a> <span>|</span>
                 <a href="privacy-tc.html">私隱政策</a> <span>|</span>
                 <a href="refund-policy-tc.html">退款政策</a>
             </div>
