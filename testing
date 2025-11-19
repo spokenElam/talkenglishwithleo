@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Test - Talk English with Leo</title> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* --- Styles consistent with your project --- */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.7;
+            background-color: #f0f2f5;
+            color: #343a40;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 30px 20px; }
+        h1, h2, h3 { color: #212529; } 
+        a { color: #0056b3; text-decoration: none; } 
+
+        /* Header */
+        .page-header {
+            background-color: #fff3cd; /* Yellow for Warning/Test Mode */
+            color: #856404;
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 1px solid #ffeeba;
+        }
+        .page-header h1 { font-size: 2.2em; margin: 0; color: #856404; }
+        .page-header p { font-size: 1.1em; opacity: 0.9; margin-top: 10px; }
+        .test-badge {
+            background-color: #dc3545;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: bold;
+            vertical-align: middle;
+        }
+
+        /* Content Card */
+        .content-section { 
+            margin-top: -30px;
+            margin-bottom: 40px; 
+            padding: 40px; 
+            background-color: #ffffff; 
+            border-radius: 8px; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
+            text-align: center;
+        }
+
+        /* Stripe Button */
+        .stripe-button { 
+            display: inline-block; 
+            background-color: #635bff; /* Stripe Brand Color */
+            color: #ffffff; 
+            padding: 15px 40px; 
+            text-decoration: none; 
+            border-radius: 5px; 
+            font-weight: 600; 
+            font-size: 1.2em; 
+            transition: all 0.2s ease; 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            margin: 20px 0;
+        } 
+        .stripe-button:hover { 
+            background-color: #4d45e6; 
+            transform: translateY(-2px); 
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            color: #fff;
+        }
+        .stripe-button i { margin-right: 8px; }
+
+        /* Test Info Box */
+        .test-info {
+            background-color: #f8f9fa;
+            border: 1px dashed #ced4da;
+            padding: 20px;
+            border-radius: 6px;
+            margin-top: 30px;
+            text-align: left;
+            font-size: 0.95em;
+        }
+        .test-info code {
+            background-color: #e9ecef;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: monospace;
+            color: #c7254e;
+            font-size: 1.1em;
+        }
+
+        /* Back Link */
+        .back-link { display: block; margin-top: 30px; color: #6c757d; }
+        .back-link:hover { color: #343a40; }
+
+    </style>
+</head>
+<body>
+
+    <div class="page-header">
+        <h1><span class="test-badge">SANDBOX</span> Payment Test</h1>
+        <p>This page is for verifying Stripe integration connectivity.</p>
+    </div>
+
+    <div class="container">
+        
+        <section class="content-section">
+            
+            <div style="margin-bottom: 30px;">
+                <i class="fa-brands fa-stripe fa-4x" style="color: #635bff;"></i>
+            </div>
+
+            <h2>Test Checkout Flow</h2>
+            <p>Click the button below to initiate a test transaction. No real money will be charged.</p>
+            
+            <!-- YOUR STRIPE TEST LINK -->
+            <a href="https://buy.stripe.com/test_cNicN71TugmL7Pa9XigjC00" class="stripe-button" target="_blank">
+                <i class="fa-solid fa-credit-card"></i> Pay Now (Test Mode)
+            </a>
+
+            <div class="test-info">
+                <h4><i class="fa-solid fa-flask"></i> How to test:</h4>
+                <p>When you are redirected to the Stripe checkout page, please use the following <strong>Test Card</strong> details to simulate a successful payment:</p>
+                <ul style="margin-top: 10px;">
+                    <li><strong>Card Number:</strong> <code>4242 4242 4242 4242</code></li>
+                    <li><strong>Expiry:</strong> Any future date (e.g., <code>12/28</code>)</li>
+                    <li><strong>CVC:</strong> Any 3 digits (e.g., <code>123</code>)</li>
+                    <li><strong>ZIP/Postal:</strong> Any valid zip (e.g., <code>10001</code>)</li>
+                </ul>
+            </div>
+
+            <a href="index-tc.html" class="back-link">
+                <i class="fa-solid fa-arrow-left"></i> Back to Home (TC)
+            </a>
+            <br>
+            <a href="index.html" class="back-link" style="margin-top: 10px;">
+                <i class="fa-solid fa-arrow-left"></i> Back to Home (EN)
+            </a>
+
+        </section>
+
+        <div style="text-align: center; color: #adb5bd; font-size: 0.8em;">
+            <p>Development Build • Internal Use Only</p>
+        </div>
+
+    </div>
+</body>
+</html>
