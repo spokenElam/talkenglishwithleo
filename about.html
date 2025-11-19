@@ -3,60 +3,215 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - TalkingBob</title>
+    <title>About Us - Talk English with Leo</title> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        /* --- Styles are similar to index.html for consistency --- */
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; line-height: 1.7; background-color: #f8f9fa; color: #343a40; margin: 0; padding: 0; }
+        /* --- Inherited Styles from home.html --- */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang HK", "Microsoft JhengHei", sans-serif;
+            line-height: 1.7;
+            background-color: #f0f2f5;
+            color: #343a40;
+        }
         .container { max-width: 800px; margin: 0 auto; padding: 30px 20px; }
-        .content-section { margin-bottom: 40px; padding: 30px; background-color: #ffffff; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); text-align: left;}
-        h1, h2 { color: #212529; text-align: center; margin-bottom: 30px; border-bottom: 1px solid #eee; padding-bottom: 15px;}
-        h1 { font-size: 2.2em; }
-        h2 { font-size: 1.8em; }
-        p { margin-bottom: 20px; color: #495057; }
+        h1, h2, h3 { color: #212529; } 
+        a { color: #0056b3; text-decoration: none; } 
+        a:hover { text-decoration: underline; }
+
+        /* Language Switcher */
         .lang-switcher { text-align: center; padding: 12px; background-color: #e9ecef; font-size: 0.9em; border-bottom: 1px solid #dee2e6; }
-        .lang-switcher a { margin: 0 12px; text-decoration: none; color: #495057; }
-        .lang-switcher a.active { font-weight: bold; color: #0056b3; }
-        .footer { margin-top: 60px; padding-bottom: 30px; font-size: 0.85em; color: #6c757d; text-align: center; }
+        .lang-switcher a { margin: 0 12px; text-decoration: none; color: #495057; } .lang-switcher a.active { font-weight: bold; color: #0056b3; }
+
+        /* Page Header */
+        .page-header {
+            background-color: #d9edf7;
+            color: #004085;
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom: 1px solid #cce5ff;
+        }
+        .page-header h1 {
+            font-size: 2.5em;
+            margin: 0;
+            color: #004085;
+        }
+        .page-header p {
+            font-size: 1.1em;
+            opacity: 0.8;
+            margin-top: 10px;
+        }
+
+        /* Content Sections */
+        .content-section { 
+            margin-bottom: 40px; 
+            padding: 40px; 
+            background-color: #ffffff; 
+            border-radius: 8px; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
+        }
+        .content-section h2 { 
+            font-size: 1.8em; 
+            color: #343a40; 
+            margin-top: 0; 
+            margin-bottom: 30px; 
+            text-align: center; 
+            border-bottom: 1px solid #eee; 
+            padding-bottom: 15px; 
+        }
+
+        /* About Block Styles */
+        .about-block {
+            margin-bottom: 40px;
+        }
+        .about-block:last-child {
+            margin-bottom: 0;
+        }
+        .about-block h3 {
+            color: #007bff;
+            font-size: 1.4em;
+            margin-bottom: 15px;
+            border-left: 4px solid #007bff;
+            padding-left: 12px;
+        }
+        .about-block p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        
+        /* List Styles */
+        .about-list {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 15px;
+        }
+        .about-list li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 10px;
+        }
+        .about-list li:before {
+            content: "\f00c";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 4px;
+            color: #28a745;
+        }
+        .about-list strong {
+            color: #0056b3;
+        }
+
+        /* Footer Styles */
+        .footer { text-align: center; margin-top: 50px; padding-bottom: 30px; font-size: 0.9em; color: #6c757d; }
         .footer-nav { margin-bottom: 15px; }
-        .footer-nav a { color: #495057; text-decoration: underline; margin: 0 8px; }
+        .footer-nav a { color: #6c757d; margin: 0 8px; }
+        .footer-nav a:hover { color: #007bff; }
+
+        /* Button Styles */
+        .button { 
+            display: inline-block; background-color: #007bff; color: #ffffff; padding: 12px 30px; text-decoration: none; border-radius: 5px; font-weight: 500; font-size: 1em; text-align: center; 
+            transition: background-color 0.2s ease, transform 0.1s ease; 
+            border: none; cursor: pointer; margin-top: 20px;
+        } 
+        .button:hover { background-color: #0056b3; transform: translateY(-1px); color: #fff; } 
+
+        @media (max-width: 768px) {
+            .page-header { padding: 40px 20px; }
+            .page-header h1 { font-size: 2em; }
+            .content-section { padding: 25px; }
+        }
+        @media (max-width: 650px) { 
+            .footer-nav a { display: block; margin: 5px 0; } 
+            .footer-nav span { display: none; } 
+        }
     </style>
 </head>
 <body>
-    <!-- Language Switcher -->
+
+    <!-- CORRECTED LANGUAGE SWITCHER FOR ABOUT PAGE -->
     <div class="lang-switcher">
-        <a href="index.html" class="active">English</a> |
-        <a href="index-tc.html">繁體中文</a> |
-        <a href="index-sc.html">简体中文</a>
+        <a href="about.html" class="active">English</a> |
+        <a href="about-tc.html">繁體中文</a> | <a href="about-sc.html">简体中文</a>
+    </div>
+
+    <div class="page-header">
+        <h1>About Us</h1>
+        <p>Talk English with Leo</p>
     </div>
 
     <div class="container">
-        <div class="content-section">
-            <h1>About Us</h1>
-            <p>Welcome to TalkingBob, operated by <strong>E-Lam Limited</strong>. Our mission is simple: to help you speak English confidently, clearly, and fluently, with an authentic British accent.</p>
-            <p>We understand that many learners study English for years but still struggle to express themselves naturally in conversation. That's why we created our unique daily coaching program.</p>
+        
+        <section class="content-section">
+            
+            <!-- Our Mission -->
+            <div class="about-block">
+                <h3>Our Mission</h3>
+                <p>
+                    Talk English with Leo (operated by E-Lam Limited) was founded with a simple goal: to help learners like you do more than just study grammar rules—we want to help you speak fluent, authentic English with confidence.
+                </p>
+                <p>
+                    We understand that many people study English for years in school but still hesitate when it comes to real-life conversation. That's why we designed our unique <strong>"Daily Focus"</strong> method, immersing you in a genuine language environment every day with personalized feedback from professional tutors.
+                </p>
+            </div>
 
-            <h2>Our Approach</h2>
-            <p>We believe in practical application and personalized feedback. Our "Daily Mission + Coach Feedback" model connects you directly with experienced tutors via WhatsApp or WeChat. Instead of rigid lessons, you get manageable daily tasks designed to build your skills progressively. The core of our service is the detailed, personalized feedback you receive within 24 hours, focusing on clarity, fluency, and pronunciation.</p>
+            <!-- Our Learning Model -->
+            <div class="about-block">
+                <h3>Our Learning Model</h3>
+                <p>
+                    We believe that consistent, structured practice is the key to success. Unlike traditional courses, we plan a systematic workflow from Monday to Friday, ensuring you master everything from input to output:
+                </p>
+                <ul class="about-list">
+                    <li><strong>Mon - Tue:</strong> Focus on <strong>Vocabulary & Sentence Building</strong> to lay a solid foundation.</li>
+                    <li><strong>Wed - Thu:</strong> Enter <strong>Simulation Mode</strong> to practice asking questions and responding instantly.</li>
+                    <li><strong>Friday:</strong> Join the <strong>Weekly Sync-up</strong> to review progress and clarify doubts.</li>
+                </ul>
+                <p style="margin-top: 15px; font-style: italic; color: #666;">
+                    With flexible weekly themes (e.g., Ordering at a Restaurant, Asking for Directions), we ensure your learning is relevant to your life.
+                </p>
+            </div>
 
-            <h2>Our Tutors</h2>
-            <p>All our coaching is provided by <strong>senior British tutors with over 10 years of residency in the UK</strong>. They possess a deep understanding of authentic British English, including nuances, idioms, and cultural context, ensuring you learn to speak like a local.</p>
+            <!-- Our Tutors -->
+            <div class="about-block">
+                <h3>Our Tutors</h3>
+                <p>
+                    We take pride in our team of <strong>Expat Tutors</strong>. Every tutor is an experienced expatriate who not only masters the English language but also deeply understands the cultural nuances behind it. They specialize in teaching authentic usage and are dedicated to helping you overcome the fear of speaking.
+                </p>
+            </div>
 
-            <p>We are passionate about helping you achieve your English speaking goals. Join us and start speaking confidently, every day!</p>
+            <!-- Our Promise -->
+            <div class="about-block">
+                <h3>Our Promise</h3>
+                <p>
+                    We are committed to providing high-quality, personalized, and effective English coaching. We believe that through daily practice and guidance from professional tutors, anyone can communicate in English with confidence.
+                </p>
+            </div>
+
+            <!-- CTA -->
+            <div style="text-align: center; margin-top: 50px; border-top: 1px solid #eee; padding-top: 30px;">
+                <p>Ready to start your journey?</p>
+                <!-- Links to English Home Page Anchor -->
+                <a href="index.html#weekly-plan" class="button">View Weekly Plan</a>
+            </div>
+
+        </section>
+
+        <div class="footer">
+            <div class="footer-nav"> 
+                <!-- Footer links pointing to English versions -->
+                <a href="index.html">Home</a> <span>|</span>
+                <a href="about.html" style="font-weight: bold; color: #343a40;">About Us</a> <span>|</span>
+                <a href="contact.html">Contact</a> <span>|</span>
+                <a href="terms.html">Terms</a> <span>|</span>
+                <a href="privacy.html">Privacy</a> <span>|</span>
+                <a href="refund-policy.html">Refund Policy</a>
+            </div>
+            <p>&copy; 2025 E-Lam Limited. All Rights Reserved.</p>
         </div>
-    </div>
 
-    <!-- Updated Footer -->
-    <div class="footer">
-        <div class="footer-nav">
-            <a href="index.html">Home</a> |
-            <a href="about.html">About Us</a> |
-            <a href="contact.html">Contact Us</a> |
-            <a href="terms.html">Terms of Service</a> |
-            <a href="privacy.html">Privacy Policy</a> |
-            <a href="refund-policy.html">Refund Policy</a>
-        </div>
-        <p>&copy; 2025 E-Lam Limited. All rights reserved.</p>
     </div>
-
 </body>
 </html>
